@@ -1,4 +1,4 @@
-const URL = "http://localhost:8080/Recap";
+const URL = "http://localhost:5173/";
 
 
 function handleHttpErrors(res) {
@@ -43,6 +43,7 @@ function apiFacade() {
 const facade = apiFacade();
 
 const options = makeOptions("POST", true,{username: user, password: password });
+
 return fetch(URL + "/api/login", options)
     .then(handleHttpErrors)
     .then(res => {setToken(res.token) })
